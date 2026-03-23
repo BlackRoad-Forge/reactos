@@ -515,6 +515,7 @@ ImmInstallIMEW(
     PWSTR pchFileTitle;
     GetFullPathNameW(lpszIMEFileName, _countof(szImeFileName), szImeFileName, &pchFileTitle);
     //CharUpperW(szImeFileName); // DON'T DO THIS! We have case-sensitive file-systems
+    if (IS_NULL_UNEXPECTEDLY(pchFileTitle))
         return NULL;
 
     /* Load the IME version info */
